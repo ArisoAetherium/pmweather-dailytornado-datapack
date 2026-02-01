@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "description": "Spawns one ProtoManly tornado per in-game day, each stronger than the last.",
+    "pack_format": 48
+  }
+}

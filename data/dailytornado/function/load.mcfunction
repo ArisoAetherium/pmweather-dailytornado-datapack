@@ -1,0 +1,9 @@
+scoreboard objectives add day dummy
+scoreboard objectives add lastDay dummy
+scoreboard objectives add tornadoDay dummy
+scoreboard objectives add daytime dummy
+# Store current day so first tick doesn't trigger; we use "day" objective for comparison
+execute store result score #day day run time query day
+execute store result score #lastDay lastDay run time query day
+# -1 = no tornado scheduled this day
+scoreboard players set #target daytime -1
