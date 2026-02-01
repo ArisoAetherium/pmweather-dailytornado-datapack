@@ -7,3 +7,6 @@ execute store result score #day day run time query day
 execute store result score #lastDay lastDay run time query day
 # -1 = no tornado scheduled this day
 scoreboard players set #target daytime -1
+
+# Enable Aim at Player so storms/tornados aim at the player (optional; also run after each spawn)
+execute run pmweather aimtoplayer all

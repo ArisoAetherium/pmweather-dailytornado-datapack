@@ -3,25 +3,29 @@ tellraw @a {"text":"[Daily Tornado] Tornado incoming!","color":"yellow"}
 # So we don't spawn again until next day
 scoreboard players set #target daytime -1
 
-# Spawn at tier based on #tornadoDay tornadoDay (1 = first tornado, 2 = second, ... 20+ = max)
-execute if score #tornadoDay tornadoDay matches 1 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 150 100
-execute if score #tornadoDay tornadoDay matches 2 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 165 150
-execute if score #tornadoDay tornadoDay matches 3 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 180 200
-execute if score #tornadoDay tornadoDay matches 4 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 195 250
-execute if score #tornadoDay tornadoDay matches 5 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 210 300
-execute if score #tornadoDay tornadoDay matches 6 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 225 350
-execute if score #tornadoDay tornadoDay matches 7 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 240 400
-execute if score #tornadoDay tornadoDay matches 8 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 255 450
-execute if score #tornadoDay tornadoDay matches 9 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 270 500
-execute if score #tornadoDay tornadoDay matches 10 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 285 550
-execute if score #tornadoDay tornadoDay matches 11 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 300 600
-execute if score #tornadoDay tornadoDay matches 12 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 315 650
-execute if score #tornadoDay tornadoDay matches 13 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 330 700
-execute if score #tornadoDay tornadoDay matches 14 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 345 750
-execute if score #tornadoDay tornadoDay matches 15 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 360 800
-execute if score #tornadoDay tornadoDay matches 16 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 375 850
-execute if score #tornadoDay tornadoDay matches 17 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 390 900
-execute if score #tornadoDay tornadoDay matches 18 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 400 900
-execute if score #tornadoDay tornadoDay matches 19 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 400 900
-execute if score #tornadoDay tornadoDay matches 20 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 400 900
-execute if score #tornadoDay tornadoDay matches 21.. run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 90 400 900
+# buildto fromStage fromEnergy windspeed width — windspeed in mph, width in meters (1 block = 1 m)
+# fromEnergy ramps 1 (early days) to 50 (later days). Tier by #tornadoDay tornadoDay (1 … 21+ = max)
+execute if score #tornadoDay tornadoDay matches 1 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 1 68 50
+execute if score #tornadoDay tornadoDay matches 2 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 3 75 60
+execute if score #tornadoDay tornadoDay matches 3 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 6 82 72
+execute if score #tornadoDay tornadoDay matches 4 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 8 88 85
+execute if score #tornadoDay tornadoDay matches 5 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 11 95 98
+execute if score #tornadoDay tornadoDay matches 6 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 13 104 115
+execute if score #tornadoDay tornadoDay matches 7 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 16 112 135
+execute if score #tornadoDay tornadoDay matches 8 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 18 120 155
+execute if score #tornadoDay tornadoDay matches 9 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 21 128 175
+execute if score #tornadoDay tornadoDay matches 10 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 23 135 200
+execute if score #tornadoDay tornadoDay matches 11 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 26 142 230
+execute if score #tornadoDay tornadoDay matches 12 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 28 150 260
+execute if score #tornadoDay tornadoDay matches 13 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 30 156 290
+execute if score #tornadoDay tornadoDay matches 14 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 33 162 320
+execute if score #tornadoDay tornadoDay matches 15 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 35 172 360
+execute if score #tornadoDay tornadoDay matches 16 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 38 182 400
+execute if score #tornadoDay tornadoDay matches 17 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 40 190 440
+execute if score #tornadoDay tornadoDay matches 18 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 43 198 480
+execute if score #tornadoDay tornadoDay matches 19 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 45 208 520
+execute if score #tornadoDay tornadoDay matches 20 run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 48 218 560
+execute if score #tornadoDay tornadoDay matches 21.. run execute as @a[limit=1,sort=nearest] run pmweather spawn tornado buildto 2 50 228 600
+
+# Make the just-spawned tornado aim at the player (command only affects existing tornados)
+execute run pmweather aimtoplayer all
