@@ -17,8 +17,8 @@ Spawns one ProtoManly tornado per in-game day, each stronger than the last.
 ## How it works
 
 - **Per in-game day:** Exactly one tornado is scheduled per day using `time query day` and `time query daytime`. Works with normal time and `/time add`.
-- **Random time:** At the start of each new day, a random time of day in 1–23999 is chosen so the tornado can occur at dawn, noon, dusk, or night.
-- **Escalating strength:** Tornado strength is tiered by "tornado day" count (1st tornado, 2nd, …). The datapack uses 21 tiers with **EF-scale windspeed (mph)** and **width in meters** (1 block = 1 m), from weak/narrow (EF0, ~50 m) to violent/wide (EF5, ~600 m). Command: `pmweather spawn tornado buildto fromStage fromEnergy windspeed width` — fromStage 2; fromEnergy ramps from 1 (first days, slower build-up) to 50 (later days). fromEnergy 0–99 controls how quickly the tornado develops.
+- **Random time:** At the start of each new day, a random time is chosen with **70% chance during the day** (daytime 1000–11000) and **30% at night** (13000–23000) so tornados are more likely in daylight.
+- **Escalating strength:** Tornado strength is tiered by "tornado day" count (1st tornado, 2nd, …). The **initial** tornado is `buildto 2 25 200 30` (fromEnergy 25, windspeed 200 mph, width 30 m). Over 21 tiers it ramps to **max** `buildto 2 99 400 500` (fromEnergy 99, windspeed 400 mph, width 500 m). Command: `pmweather spawn tornado buildto fromStage fromEnergy windspeed width`.
 - **Spawn location:** The tornado is spawned at the nearest player.
 - **Aim at player:** After spawning, the datapack runs `pmweather aimtoplayer all` so the tornado (and any existing storms) aim at the player and move toward them. The mod's **Aim at Player Offset** (default 248 blocks in ProtoManly's Weather config) sets how far from the player storms aim for.
 - **Chat messages:**
@@ -27,7 +27,7 @@ Spawns one ProtoManly tornado per in-game day, each stronger than the last.
 
 ### Internal
 
-The datapack hooks into `#minecraft:load` (runs `dailytornado:load`) and `#minecraft:tick` (runs `dailytornado:tick`). It uses four dummy scoreboard objectives — `day`, `lastDay`, `tornadoDay`, and `daytime` — to detect a new day, count tornado days, and compare current daytime to the random target so the tornado fires once per day.
+The datapack hooks into `#minecraft:load` (runs `dailytornado:load`) and `#minecraft:tick` (runs `dailytornado:tick`). It uses dummy scoreboard objectives — `day`, `lastDay`, `tornadoDay`, `daytime`, `roll` — to detect a new day, count tornado days, and compare current daytime to the random target so the tornado fires once per day.
 
 ## Credits
 
