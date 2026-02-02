@@ -22,8 +22,7 @@ Spawns one ProtoManly tornado per in-game day, each stronger than the last.
 - **Spawn location:** The tornado is spawned at the nearest player.
 - **Aim at player:** After spawning, the datapack runs `pmweather aimtoplayer all` so the tornado (and any existing storms) aim at the player and move toward them. The mod's **Aim at Player Offset** (default 248 blocks in ProtoManly's Weather config) sets how far from the player storms aim for.
 - **Chat messages:**
-  - Start of day: *"[Daily Tornado] A tornado will strike sometime today..."* (gray)
-  - When the tornado triggers: *"[Daily Tornado] Tornado incoming!"* (yellow)
+  - Start of day: *"[Aetherium Cloud Forecast]: Elevated convective potential and upper-level vorticity noted for your region. Isolated organized activity possible later today."* (gray)
 
 ### Internal
 

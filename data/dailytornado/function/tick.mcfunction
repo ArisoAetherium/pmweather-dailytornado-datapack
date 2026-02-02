@@ -3,7 +3,7 @@ execute store result score #day day run time query day
 execute store result score #lastDay day run scoreboard players get #lastDay lastDay
 
 # New day: schedule tornado for a random time of day (so /time add advances toward it)
-execute if score #day day > #lastDay day run tellraw @a {"text":"[Daily Tornado] A tornado will strike sometime today...","color":"gray"}
+execute if score #day day > #lastDay day run tellraw @a {"text":"[Aetherium Cloud Forecast]: Elevated convective potential and upper-level vorticity noted for your region. Isolated organized activity possible later today.","color":"gray"}
 execute if score #day day > #lastDay day run function dailytornado:on_new_day
 
 # Time-of-day check: when current time of day reaches our random target, spawn the tornado

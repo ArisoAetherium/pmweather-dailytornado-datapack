@@ -1,5 +1,4 @@
 # Tornado strikes now (called when time of day reaches our random target)
-tellraw @a {"text":"[Daily Tornado] Tornado incoming!","color":"yellow"}
 # So we don't spawn again until next day
 scoreboard players set #target daytime -1
 
