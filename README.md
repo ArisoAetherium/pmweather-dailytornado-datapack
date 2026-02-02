@@ -6,7 +6,7 @@ Spawns one ProtoManly tornado per in-game day, each stronger than the last.
 
 - **Minecraft:** 1.21.1
 - **Loader:** NeoForge 21.1.219
-- **Mod:** [ProtoManly's Weather](https://www.curseforge.com/minecraft/mc-mods/promans-weather) — provides tornados and the `pmweather spawn tornado buildto` command used by this datapack
+- **Mod:** [ProtoManly's Weather](https://modrinth.com/mod/protomanlys-weather) — provides tornados and the `pmweather spawn tornado buildto` command used by this datapack
 
 ## Installation
 
